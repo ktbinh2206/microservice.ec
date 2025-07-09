@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ec-products
+server:
+  port: 8081
