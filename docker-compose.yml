@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  ec-auth:
+    build:
+      context: ./ec_auth
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - ec-network
+
+  ec-products:
+    build:
+      context: ./ec_products
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    networks:
+      - ec-network
+
+  ec-gateway:
+    build:
+      context: ./ec_gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - ec-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: sa123456
+      MYSQL_DATABASE: authdb
+    ports:
+      - "3306:3306"
+    networks:
+      - ec-network
+
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    networks:
+      - ec-network
+
+networks:
+  ec-network:
+    driver: bridge

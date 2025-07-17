@@ -3,6 +3,6 @@ spring:
     name: ec-products
   data:
     mongodb:
-      uri: mongodb://localhost:27017/ec_products
+      uri: mongodb://mongo:27017/ec_products
 server:
   port: 8082
