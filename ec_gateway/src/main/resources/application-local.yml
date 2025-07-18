@@ -6,6 +6,9 @@ spring:
           uri: http://ec-auth:8081
           predicates:
             - Path=/api/auth/**
+          filters:
+            - StripPrefix=1
+
         - id: products-service
           uri: http://ec-products:8082
           predicates:

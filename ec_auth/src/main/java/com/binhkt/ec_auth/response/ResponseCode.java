@@ -2,6 +2,7 @@ package com.binhkt.ec_auth.response;
 
 public enum ResponseCode {
     USER_REGISTERED_SUCCESS("User registered successfully"),
+    USER_REGISTRATION_FAILED("User registration failed"),
     LOGIN_SUCCESS("Login successful"),
     GENERIC_ERROR("An error occurred"),
     ACCESS_DENIED("Access Denied"),
